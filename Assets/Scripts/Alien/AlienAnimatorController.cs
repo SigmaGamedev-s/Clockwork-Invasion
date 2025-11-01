@@ -55,4 +55,12 @@ public class AlienAnimatorController : MonoBehaviour
             shooter.FireProjectile();
         }
     }
+
+    public void PlayShootSoundEvent()
+    {
+        if (shooter != null)
+        {
+            shooter.PlayShootSound();
+        }
+    }
 }

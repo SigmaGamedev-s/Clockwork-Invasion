@@ -120,6 +120,8 @@ MonoBehaviour:
   ShootMask:
     serializedVersion: 2
     m_Bits: 128
+  shootSound: {fileID: 8300000, guid: 48168667c8bea1144b5435b23249854f, type: 3}
+  volume: 0.2
 --- !u!61 &7678124858744422622
 BoxCollider2D:
   m_ObjectHideFlags: 0

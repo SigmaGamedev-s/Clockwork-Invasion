@@ -175,10 +175,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   cooldown: 1.5
+  hitSound: {fileID: 8300000, guid: fb52a1a5b2f07ba48b04d2040a006c0b, type: 3}
+  volume: 1
   basicShooter: {fileID: 0}
   bulletPrefab: {fileID: 4475891872823499793, guid: 1e52bed6248eee543aed034c1a32cf78, type: 3}
   firePoint: {fileID: 2950485553414051660}
-  bulletSpeed: 5
+  shootSound: {fileID: 8300000, guid: f87e9a9a7807049449198cb0f82ed2cb, type: 3}
 --- !u!1 &5050614381413605265
 GameObject:
   m_ObjectHideFlags: 0
