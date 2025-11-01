@@ -170,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &4402638
@@ -317,6 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &6063245
@@ -539,6 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &99623776
@@ -695,7 +698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -820,6 +823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &107013730
@@ -967,6 +971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &110685539
@@ -1182,6 +1187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &144234211
@@ -1812,6 +1818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &271144718
@@ -1959,6 +1966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &273238313
@@ -2106,6 +2114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &295311191
@@ -2262,7 +2271,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 150
+  m_text: 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2700,6 +2709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &432986504
@@ -2833,7 +2843,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -129, y: -23}
+  m_AnchoredPosition: {x: -124.2, y: -23}
   m_SizeDelta: {x: 53, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &501973996
@@ -3118,6 +3128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &606295979
@@ -3347,6 +3358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &669930698
@@ -3712,7 +3724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretSprite: {fileID: 21300000, guid: 257251e983080b84bb6581c710a50a6d, type: 3}
   turretObject: {fileID: 224032152432991723, guid: 870593a9ee0b66e4abc3dff9dda72459, type: 3}
-  price: 150
+  price: 100
   icon: {fileID: 727305893}
   priceText: {fileID: 317951138}
 --- !u!114 &737606207
@@ -3945,6 +3957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &998745138
@@ -4092,6 +4105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1013461023
@@ -4225,7 +4239,13 @@ MonoBehaviour:
   - {fileID: 821015314}
   - {fileID: 1049641654}
   - {fileID: 728367020}
-  alien: {fileID: 3692630463065471788, guid: 4c8dffbb0a0b8bf4aba7ac421a75124b, type: 3}
+  alienPrefabs:
+  - {fileID: 3692630463065471788, guid: ea59874808770a24995bce234bb09cfd, type: 3}
+  - {fileID: 3692630463065471788, guid: c13b815a6d561d447a8daa307d790025, type: 3}
+  - {fileID: 3692630463065471788, guid: e78b3afdafcecdc47bbd126003ae7a69, type: 3}
+  - {fileID: 3692630463065471788, guid: 39f6e164083a9594898314f086bfd77f, type: 3}
+  startDelay: 2
+  spawnInterval: 5
 --- !u!4 &1020509817
 Transform:
   m_ObjectHideFlags: 0
@@ -4368,6 +4388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1048032703
@@ -4546,6 +4567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1058582843
@@ -4729,6 +4751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1063883468
@@ -4876,6 +4899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1097765421
@@ -5399,6 +5423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1293088081
@@ -5609,6 +5634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1411822677
@@ -5846,7 +5872,7 @@ Transform:
   m_GameObject: {fileID: 1487111791}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.59, y: 4.35, z: 0}
+  m_LocalPosition: {x: -10.59, y: 4.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6249,6 +6275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1595018795
@@ -6480,6 +6507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1642894145
@@ -6678,7 +6706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bipodSprite: {fileID: 21300000, guid: c43db689512969b4b8f15ce0badc0d98, type: 3}
   bipodObject: {fileID: 5308273874866230130, guid: ae5f219a5d901b34f98c2cf2ebf93dd2, type: 3}
-  price: 0
+  price: 100
   icon: {fileID: 2004518316}
   priceText: {fileID: 103839369}
 --- !u!1 &1722004172
@@ -6729,6 +6757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1722004175
@@ -6892,6 +6921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1769276221
@@ -7039,6 +7069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1791146525
@@ -7186,6 +7217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1799061917
@@ -7886,6 +7918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1883613253
@@ -8108,6 +8141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1931229606
@@ -8255,6 +8289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1957530782
@@ -8402,6 +8437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &1966886198
@@ -8640,6 +8676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &2102790832
@@ -8787,6 +8824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBipod: 0
   hasTurret: 0
+  maxHealth: 100
   bipodObject: {fileID: 0}
   turretObject: {fileID: 0}
 --- !u!61 &2121871675

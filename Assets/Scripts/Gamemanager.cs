@@ -39,22 +39,20 @@ public class Gamemanager : MonoBehaviour
 
             if (tile == null || sr == null)
                 return;
-
+            sr.transform.localScale = Vector3.one * 0.45f;
             // УСТАНОВКА СОШЕК
             if (currentBipod)
             {
                 sr.enabled = true;
                 sr.sprite = currentBipodSprite;
-                sr.transform.localScale = new Vector3(0.45f, 0.45f, 1f);
-
-                if (!tile.hasBipod)
-                    sr.color = greenColor;
-                else
-                    sr.color = redColor;
+                sr.color = tile.hasBipod ? redColor : greenColor;
 
                 if (Input.GetMouseButtonDown(0) && !tile.hasBipod)
                 {
                     GameObject newBipod = Instantiate(currentBipod, tile.transform.position, Quaternion.identity);
+                    newBipod.transform.SetParent(tile.transform, worldPositionStays: true);
+
+
                     tile.hasBipod = true;
                     tile.bipodObject = newBipod;
 
@@ -72,16 +70,15 @@ public class Gamemanager : MonoBehaviour
             {
                 sr.enabled = true;
                 sr.sprite = currentTurretSprite;
-                sr.transform.localScale = new Vector3(0.35f, 0.35f, 1f);
-
-                if (tile.hasBipod && !tile.hasTurret)
-                    sr.color = greenColor;
-                else
-                    sr.color = redColor;  
+                sr.color = (tile.hasBipod && !tile.hasTurret) ? greenColor : redColor;
 
                 if (Input.GetMouseButtonDown(0) && tile.hasBipod && !tile.hasTurret)
                 {
                     GameObject newTurret = Instantiate(currentTurret, tile.transform.position, Quaternion.identity);
+                    newTurret.transform.SetParent(tile.transform, worldPositionStays: true);
+
+
+
                     tile.hasTurret = true;
                     tile.turretObject = newTurret;
 
