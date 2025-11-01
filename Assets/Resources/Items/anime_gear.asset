@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aec9666c70af654f843c97262ff0309, type: 3}
   m_Name: anime_gear
   m_EditorClassIdentifier: 
-  value: 5
+  value: 15
   isEnergy: 0
-  sprite: {fileID: 21300000, guid: b2dc4c8089b8a494e8cc23adf1a94c4e, type: 3}
+  sprite: {fileID: 21300000, guid: 8da0e180ec1903746ab7eccd1e9108d8, type: 3}
