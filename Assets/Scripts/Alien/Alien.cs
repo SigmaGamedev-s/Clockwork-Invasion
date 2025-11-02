@@ -14,11 +14,27 @@ public class Alien : MonoBehaviour
     public float cooldown = 1.5f;
     protected bool canShoot = true;
 
+    [Header("Audio Settings")]
+    public AudioClip hitSound;
+    public float volume = 1f;
+    protected AudioSource audioSource;
+
     [HideInInspector] public BasicShooter basicShooter;
     protected TurretTile targetTurretTile;
 
     protected AlienAnimatorController anim;
     protected bool isDead = false;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.playOnAwake = false;
+    }
 
     protected virtual void Awake()
     {
@@ -79,6 +95,12 @@ public class Alien : MonoBehaviour
     public virtual void Hit(int damage)
     {
         if (isDead) return;
+
+        if (hitSound != null)
+        {
+            audioSource.pitch = Random.Range(0.85f, 0.95f);
+            audioSource.PlayOneShot(hitSound, volume * Random.Range(0.2f, 0.3f));
+        }
 
         health -= damage;
         if (health <= 0)

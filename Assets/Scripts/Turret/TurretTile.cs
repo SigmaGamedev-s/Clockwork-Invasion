@@ -10,8 +10,25 @@ public class TurretTile : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
 
+    [Header("Audio Settings")]
+    public AudioClip hitSound;
+    public float volume = 1f;
+    private AudioSource audioSource;
+
     [HideInInspector] public GameObject bipodObject;
     [HideInInspector] public GameObject turretObject;
+
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.playOnAwake = false;
+    }
 
     private void Awake()
     {
@@ -20,6 +37,12 @@ public class TurretTile : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+
+        if (hitSound != null)
+        {
+            audioSource.pitch = Random.Range(0.85f, 0.95f);
+            audioSource.PlayOneShot(hitSound, volume * Random.Range(0.8f, 1f));
+        }
         currentHealth -= damage;
 
         if (currentHealth <= 0)
