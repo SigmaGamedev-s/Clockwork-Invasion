@@ -33,7 +33,7 @@ public class BasicShooter : MonoBehaviour
         audioSource.playOnAwake = false;  // чтобы не проигрывался при старте
         gameObject.layer = 8;
 
-        Invoke(nameof(ResetCooldown), cooldown);
+        Invoke(nameof(ResetCooldown), 0.5f);
     }
 
     private void Update()

@@ -18,6 +18,7 @@ public class TurretTile : MonoBehaviour
     [HideInInspector] public GameObject bipodObject;
     [HideInInspector] public GameObject turretObject;
 
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();

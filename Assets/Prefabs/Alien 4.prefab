@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.8
-  health: 100
+  health: 400
   range: 4
   damage: 10
   turretMask:
