@@ -7,8 +7,6 @@ public class AlienShooter : Alien
     public GameObject bulletPrefab;
     public Transform firePoint;
 
-    public AudioClip shootSound;
-
     protected override void Shoot()
     {
         if (!canShoot || bulletPrefab == null)
@@ -21,10 +19,7 @@ public class AlienShooter : Alien
 
     public void PlayShootSound()
     {
-        if (shootSound != null)
-        {
-            audioSource.PlayOneShot(shootSound);
-        }
+        PlaySound(3);
     }
     public void FireProjectile()
     {

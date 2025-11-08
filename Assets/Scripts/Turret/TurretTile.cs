@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public class TurretTile : MonoBehaviour
+public class TurretTile : Sounds
 {
+
+    public SpriteRenderer highlightRenderer;
+
     [Header("Tile State")]
     public bool hasBipod;
     public bool hasTurret;
@@ -10,39 +13,22 @@ public class TurretTile : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
 
-    [Header("Audio Settings")]
-    public AudioClip hitSound;
-    public float volume = 1f;
-    private AudioSource audioSource;
+    [Header("Tile Type")]
+    public TurretType bipodType = TurretType.None;
+    public TurretType turretType = TurretType.None;
 
     [HideInInspector] public GameObject bipodObject;
     [HideInInspector] public GameObject turretObject;
 
 
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
-
-        audioSource.playOnAwake = false;
-    }
-
-    private void Awake()
+    protected override void Awake()
     {
         currentHealth = maxHealth;
     }
 
     public void TakeDamage(int damage)
     {
-
-        if (hitSound != null)
-        {
-            audioSource.pitch = Random.Range(0.85f, 0.95f);
-            audioSource.PlayOneShot(hitSound, volume * Random.Range(0.8f, 1f));
-        }
+        PlaySound(0, 1f * Random.Range(0.8f, 1f));
         currentHealth -= damage;
 
         if (currentHealth <= 0)
@@ -69,5 +55,15 @@ public class TurretTile : MonoBehaviour
         bipodObject = null;
         currentHealth = maxHealth;
     }
+
+    public void RemoveTurret()
+    {
+        if (hasTurret || hasBipod)
+        {
+            DestroyTurretAndBipod();
+            ResetTileState();
+        }
+    }
+
 }
 
