@@ -30,7 +30,6 @@ public class AlienBullet : MonoBehaviour
         }
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, 0.1f, turretMask);
-        Debug.DrawRay(transform.position, Vector2.right * 0.1f, Color.red);
 
         if (hit.collider)
         {

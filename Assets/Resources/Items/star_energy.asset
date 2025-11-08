@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aec9666c70af654f843c97262ff0309, type: 3}
   m_Name: star_energy
   m_EditorClassIdentifier: 
-  value: 10
+  value: 15
   isEnergy: 1
   sprite: {fileID: 21300000, guid: 630de7a75063dab409c6176e73f84bfc, type: 3}

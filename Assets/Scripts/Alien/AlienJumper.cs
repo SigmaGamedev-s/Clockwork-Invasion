@@ -14,12 +14,36 @@ public class AlienJumper : Alien
 
     private bool isJumping = false;
 
+    private float originalJumpForce;
+    private float originalJumpHeight;
+    private float originalJumpInterval;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        originalJumpForce = jumpForce;
+        originalJumpHeight = jumpHeight;
+        originalJumpInterval = jumpInterval;
+    }
+
+    protected override void Update()
+    {
+        if (isDead) return;
+        base.Update(); // Вызываем базовый Update для проверки атаки
+    }
+
     protected override void FixedUpdate()
     {
         if (isDead) return;
 
+        // Применяем откидывание если оно активно
+        if (isKnockback)
+        {
+            transform.position += (Vector3)knockbackDirection * KNOCKBACK_FORCE * Time.fixedDeltaTime;
+        }
+
+        // Прыжки работают независимо от откидывания
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, detectDistance, turretMask);
-        Debug.DrawRay(transform.position, Vector2.right * detectDistance, Color.cyan);
 
         if (hit.collider && !isJumping)
         {
@@ -35,6 +59,12 @@ public class AlienJumper : Alien
         {
             StartCoroutine(JumpForward());
         }
+    }
+
+    protected override void ApplyKnockback()
+    {
+        base.ApplyKnockback(); // Вызываем базовый метод откидывания
+        // Не останавливаем прыжки - просто добавляем откидывание
     }
 
     private IEnumerator JumpForward()
@@ -55,11 +85,26 @@ public class AlienJumper : Alien
             elapsed += Time.deltaTime;
             float t = elapsed / jumpTime;
             float height = Mathf.Sin(t * Mathf.PI) * jumpHeight;
-            transform.position = Vector3.Lerp(startPos, targetPos, t) + Vector3.up * height;
+
+            // Базовое движение прыжка
+            Vector3 jumpMovement = Vector3.Lerp(startPos, targetPos, t) + Vector3.up * height;
+
+            // Если есть откидывание - добавляем его к позиции
+            if (isKnockback)
+            {
+                jumpMovement += (Vector3)knockbackDirection * KNOCKBACK_FORCE * Time.deltaTime;
+            }
+
+            transform.position = jumpMovement;
             yield return null;
         }
 
-        transform.position = targetPos;
+        // Финализируем позицию только если нет откидывания
+        if (!isKnockback)
+        {
+            transform.position = targetPos;
+        }
+
         anim.SetIdle(true);
 
         yield return new WaitForSeconds(jumpInterval);
@@ -84,14 +129,57 @@ public class AlienJumper : Alien
             elapsed += Time.deltaTime;
             float t = elapsed / jumpTime;
             float height = Mathf.Sin(t * Mathf.PI) * jumpHeight;
-            transform.position = Vector3.Lerp(startPos, targetPos, t) + Vector3.up * height;
+
+            // Базовое движение прыжка
+            Vector3 jumpMovement = Vector3.Lerp(startPos, targetPos, t) + Vector3.up * height;
+
+            // Если есть откидывание - добавляем его к позиции
+            if (isKnockback)
+            {
+                jumpMovement += (Vector3)knockbackDirection * KNOCKBACK_FORCE * Time.deltaTime;
+            }
+
+            transform.position = jumpMovement;
             yield return null;
         }
 
-        transform.position = targetPos;
+        // Финализируем позицию только если нет откидывания
+        if (!isKnockback)
+        {
+            transform.position = targetPos;
+        }
+
         anim.SetIdle(true);
 
         yield return new WaitForSeconds(jumpInterval);
         isJumping = false;
+    }
+
+    protected override void Freeze()
+    {
+        CancelInvoke(nameof(UnFreeze));
+
+        jumpForce = originalJumpForce * 0.5f;
+        jumpInterval = originalJumpInterval * 2f;
+        cooldown = originalCooldown * 2f;
+
+        SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = new Color(0.5f, 0.7f, 1f);
+        }
+
+        Invoke(nameof(UnFreeze), 5f);
+    }
+
+    protected override void UnFreeze()
+    {
+        jumpForce = originalJumpForce;
+        jumpInterval = originalJumpInterval;
+        cooldown = originalCooldown;
+
+        SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        if (spriteRenderer != null)
+            spriteRenderer.color = originalColor;
     }
 }

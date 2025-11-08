@@ -7,6 +7,9 @@ public class Bullet : MonoBehaviour
     public float damage;
     public float speed = 0.8f;
 
+    public bool isFreeze = false;
+    public bool isKnockback = false;
+
     private void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
@@ -16,7 +19,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.TryGetComponent<Alien>(out Alien alien))
         {
-            alien.Hit((int)damage);
+            alien.Hit((int)damage, isFreeze, isKnockback);
             Destroy(gameObject);
         }
     }

@@ -1,0 +1,9 @@
+using UnityEngine;
+
+[System.Serializable]
+public class ResourceDrop
+{
+    public GameObject prefab;            
+    [Range(0f, 1f)] public float chance;
+    public int amount = 1;
+}

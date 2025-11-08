@@ -99,8 +99,6 @@ public sealed class Board : MonoBehaviour
         // --- Дальше идёт логика свапа и проверки совпадений ---
         if (_selection.Count < 2) return;
 
-        Debug.Log($"Selected tiles at ({_selection[0].x}, {_selection[0].y}) and ({_selection[1].x}, {_selection[1].y})");
-
         await Swap(_selection[0], _selection[1]);
 
         if (CanPop())
@@ -187,8 +185,6 @@ public sealed class Board : MonoBehaviour
 
     private async void RegenerateBoard()
     {
-        Debug.Log("No more moves! Regenerating board...");
-    
         const float flashDuration = 0.09f;
     
         // Анимация случайного исчезновения

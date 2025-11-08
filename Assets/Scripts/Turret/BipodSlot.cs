@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
@@ -8,6 +8,9 @@ public class BipodSlot : MonoBehaviour
     public Sprite bipodSprite;
     public GameObject bipodObject;
     public int price;
+
+    public TurretType bipodType;
+
 
     public Image icon;
     public TextMeshProUGUI priceText;
@@ -31,15 +34,43 @@ public class BipodSlot : MonoBehaviour
 
     private void BuyBipod()
     {
-        if (ScoreCounter.Instance == null)
-            return;
+        if (ScoreCounter.Instance == null) return;
 
+        // 🔹 Если уже выбрана эта сошка — отменяем выбор
+        if (gms.currentBipod == bipodObject)
+        {
+            ScoreCounter.Instance.AddToGear(gms.currentBipodPrice);
+            gms.currentBipod = null;
+            gms.currentBipodSprite = null;
+            gms.currentBipodType = TurretType.None;
+            gms.currentBipodPrice = 0;
+            return;
+        }
+
+        // 🔹 Если была выбрана другая сошка — возвращаем её цену
+        if (gms.currentBipod && gms.currentBipodPrice > 0)
+        {
+            ScoreCounter.Instance.AddToGear(gms.currentBipodPrice);
+        }
+
+        // 🔹 Проверка бюджета
         if (ScoreCounter.Instance.ScoreGear >= price)
         {
             ScoreCounter.Instance.AddToGear(-price);
             gms.currentBipod = bipodObject;
             gms.currentBipodSprite = bipodSprite;
-            gms.currentTurret = null;
+            gms.currentBipodType = bipodType;
+            gms.currentBipodPrice = price;
+
+            // сброс выбора турели
+            if (gms.currentTurret)
+            {
+                ScoreCounter.Instance.AddToEnergy(gms.currentTurretPrice);
+                gms.currentTurret = null;
+                gms.currentTurretSprite = null;
+                gms.currentTurretType = TurretType.None;
+                gms.currentTurretPrice = 0;
+            }
         }
         else
         {
