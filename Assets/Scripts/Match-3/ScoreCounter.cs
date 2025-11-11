@@ -5,22 +5,14 @@ using UnityEngine;
 public sealed class ScoreCounter : MonoBehaviour
 {
     public static ScoreCounter Instance { get; private set; }
-
+    
     [SerializeField] private TextMeshProUGUI scoreTextEnergy;
     [SerializeField] private TextMeshProUGUI scoreTextGear;
 
     public int ScoreEnergy { get; private set; }
     public int ScoreGear { get; private set; }
-
+    
     private void Awake() => Instance = this;
-
-    private void Start()
-    {
-        // Задаём стартовые значения
-        ScoreEnergy = 9999;
-        ScoreGear = 9999;
-        UpdateUI();
-    }
 
     public void AddToEnergy(int value)
     {
@@ -33,7 +25,7 @@ public sealed class ScoreCounter : MonoBehaviour
         ScoreGear += value;
         UpdateUI();
     }
-
+    
     private void UpdateUI()
     {
         scoreTextEnergy.SetText($"{ScoreEnergy}");
