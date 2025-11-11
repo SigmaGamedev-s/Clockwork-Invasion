@@ -17,14 +17,21 @@ public class ResourcePickup : Sounds
         Destroy(gameObject, lifetime);
     }
 
+    // Более надежный метод для кликов
+    private void OnMouseDown()
+    {
+        Collect();
+    }
+
+    // Альтернатива: проверка через Raycast
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Collider2D hit = Physics2D.OverlapPoint(mousePos);
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-            if (hit != null && hit.gameObject == gameObject)
+            if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
                 Collect();
             }
@@ -39,6 +46,7 @@ public class ResourcePickup : Sounds
             ScoreCounter.Instance.AddToEnergy(amount);
         else
             ScoreCounter.Instance.AddToGear(amount);
+
         PlaySound(0, destroyed: true);
         Destroy(gameObject);
     }
